@@ -7,9 +7,9 @@ describe('authentications', () => {
       method: "POST",
       url: "https://github.com/login/oauth/access_token",
       qs: {
-        client_id: "Ov23lifiZusz6HiP6DsM",
-        client_secret: "92653c368c45e68b19b4f7bd1b8e5d8c446e9467",
-        code: "f9e231e3dbc75682ee4a",
+        client_id: Cypress.env('client_id'), // Replace with your GitHub client ID
+        client_secret: Cypress.env('client_secret'), // Replace with your GitHub client secret
+        code: Cypress.env('code'), // Replace with the code you received after authorization
       },
     }).then((response) => {
       accessToken = response.body.split("=")[1];
@@ -22,8 +22,8 @@ describe('authentications', () => {
       method: 'GET',
       url: 'https://postman-echo.com/basic-auth', 
       auth: {
-        user: 'postman',
-        pass: 'password'
+        user: Cypress.env('username'),
+        pass: Cypress.env('password'),
       }
     }).then((response) => {
       expect(response.status).equal(200)
@@ -36,9 +36,9 @@ describe('authentications', () => {
       method: 'GET',
       url: 'https://postman-echo.com/basic-auth', 
       auth: {
-        username: 'postman',
-        password: 'password',
-        method: 'digest'
+        user: Cypress.env('username'),
+        pass: Cypress.env('password'),
+        method: Cypress.env('method') ? 'digest' : 'basic', // Use digest if specified
       }
     }).then((response) => {
       expect(response.status).equal(200)
@@ -47,7 +47,8 @@ describe('authentications', () => {
   });
 
   it('bearer token authentication', () => {
-    const token = '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'
+    const token = Cypress.env('github_token'); // Replace with your GitHub token
+    expect(token).to.exist; // Ensure the token is set in Cypress environment variables
     cy.request({
       method: "GET",
       url: "https://api.github.com/user/repos",
@@ -65,7 +66,7 @@ describe('authentications', () => {
       url: "https://api.openweathermap.org/data/2.5/forecast/daily",
       qs: {
         q: "Delhi",
-        appid: "711175a533db7ee9bac7a033aee34839",
+        appid: Cypress.env("appid"), // Replace with your OpenWeatherMap API key
       },
     }).then((response) => {
       expect(response.status).equal(200);
