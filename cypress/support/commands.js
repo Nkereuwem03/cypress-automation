@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 // custom iframe command
 
@@ -47,7 +47,7 @@ Cypress.Commands.add("clickLink", (linkText) => {
     .should("have.text", "Sauce Labs Bike Light");
 });
 
-// custom login for 'customCommands.cy.js
+// custom login for 'customCommands.cy.js'
 
 Cypress.Commands.add("loginApp", (url, username, password) => {
   cy.visit(url);
