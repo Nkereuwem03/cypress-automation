@@ -71,10 +71,31 @@ This repository contains end-to-end and API test automation examples using [Cypr
 npx cypress open
 ```
 
-### Run All Tests in Headless Mode
+### Run All Tests in Headless Mode (Electron - default)
 ```sh
 npx cypress run
 ```
+
+### Run All Tests in Headless Mode (Chrome)
+```sh
+npx cypress run --browser chrome
+```
+
+### Run All Tests in Headless Mode (Edge)
+```sh
+npx cypress run --browser edge
+```
+
+### Run All Tests in Headless Mode (Other Browsers)
+You can also run tests in any browser supported by Cypress, such as Firefox or Brave.  
+Just specify the browser name with the `--browser` flag:
+
+```sh
+npx cypress run --browser firefox
+npx cypress run --browser brave
+```
+
+See the [Cypress documentation on launching browsers](https://docs.cypress.io/guides/guides/launching-browsers) for the full list of supported browsers.
 
 ---
 
@@ -111,6 +132,15 @@ cypress.config.js     # Cypress configuration
   Use of custom commands and fixtures for maintainability.
 - **Clear test naming:**  
   Suites and tests are named for clarity and reporting.
+
+---
+
+## Continuous Integration
+
+This project uses [GitHub Actions](https://github.com/features/actions) to automatically run Cypress tests on every push and pull request to the `main` branch.  
+Test results and Mochawesome reports are uploaded as workflow artifacts, and notifications are sent to Slack.
+
+You can view the workflow file in [`.github/workflows/cypress.yml`](.github/workflows/cypress.yml).
 
 ---
 
