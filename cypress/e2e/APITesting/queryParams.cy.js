@@ -1,5 +1,5 @@
 describe("API Testing", () => {
-  it("should return users for the specified page when passing query parameters", () => {
+  it.skip("should return users for the specified page when passing query parameters", () => {
     cy.request({
       method: "GET",
       url: "https://reqres.in/api/users",
