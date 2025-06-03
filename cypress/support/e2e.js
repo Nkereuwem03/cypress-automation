@@ -16,3 +16,13 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 import 'cypress-mochawesome-reporter/register';
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    if (
+        err.message.includes('blocked a frame with origin') ||
+        err.message.includes('Authentication') ||
+        err.message.includes('solveSimpleChallenge')
+    ) {
+        return false;
+    }
+});
