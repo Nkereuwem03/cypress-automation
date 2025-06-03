@@ -5,7 +5,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-    
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -47,19 +47,6 @@ jobs:
           path: cypress/reports/mochawesome
           if-no-files-found: warn
           retention-days: 7
-            
-      - name: Set git user for deployment
-        id: set-git-user
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-
-      - name: Deploy Mochawesome Report to GitHub Pages
-        id: deploy-report
-        if: success()
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run deploy-report
 
       - name: Slack notify end
         id: slack-end
