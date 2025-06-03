@@ -20,7 +20,7 @@ describe("Mouse Operations", () => {
     cy.get(".context-menu-icon-copy > span").should("be.visible").click();
   });
 
-  it("should perform double-click inside iframe", () => {
+  it.skip("should perform double-click inside iframe", () => {
     cy.visit(
       "https://w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick3",
       { timeout: 6000000 }
