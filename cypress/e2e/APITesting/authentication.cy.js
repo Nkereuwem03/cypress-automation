@@ -1,21 +1,25 @@
 describe('authentications', () => {
 
   let accessToken;
-
-  before.skip('should get OAuth access token before tests', () => {
-    cy.request({
-      method: "POST",
-      url: "https://github.com/login/oauth/access_token",
-      qs: {
-        client_id: Cypress.env('client_id'), // Replace with your GitHub client ID
-        client_secret: Cypress.env('client_secret'), // Replace with your GitHub client secret
-        code: Cypress.env('code'), // Replace with the code you received after authorization
-      },
-    }).then((response) => {
-      accessToken = response.body.split("=")[1];
-      cy.log(accessToken);
+  
+  const skipBeforeHook = false;
+  
+  if (skipBeforeHook) {
+    before.skip('should get OAuth access token before tests', () => {
+      cy.request({
+        method: "POST",
+        url: "https://github.com/login/oauth/access_token",
+        qs: {
+          client_id: Cypress.env('client_id'), // Replace with your GitHub client ID
+          client_secret: Cypress.env('client_secret'), // Replace with your GitHub client secret
+          code: Cypress.env('code'), // Replace with the code you received after authorization
+        },
+      }).then((response) => {
+        accessToken = response.body.split("=")[1];
+        cy.log(accessToken);
+      });
     });
-  });
+  }
 
   it.skip('basic authentication', () => {
     cy.request({
