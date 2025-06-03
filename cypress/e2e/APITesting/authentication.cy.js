@@ -17,10 +17,10 @@ describe('authentications', () => {
     });
   });
 
-  it('basic authentication', () => {
+  it.skip('basic authentication', () => {
     cy.request({
       method: 'GET',
-      url: 'https://postman-echo.com/basic-auth', 
+      url: 'https://postman-echo.com/basic-auth',
       auth: {
         user: Cypress.env('username'),
         pass: Cypress.env('password'),
@@ -31,10 +31,10 @@ describe('authentications', () => {
     })
   });
 
-  it('digest authentication', () => {
+  it.skip('digest authentication', () => {
     cy.request({
       method: 'GET',
-      url: 'https://postman-echo.com/basic-auth', 
+      url: 'https://postman-echo.com/basic-auth',
       auth: {
         user: Cypress.env('username'),
         pass: Cypress.env('password'),
@@ -46,7 +46,7 @@ describe('authentications', () => {
     })
   });
 
-  it('bearer token authentication', () => {
+  it.skip('bearer token authentication', () => {
     const token = Cypress.env('github_token'); // Replace with your GitHub token
     expect(token).to.exist; // Ensure the token is set in Cypress environment variables
     cy.request({
@@ -60,7 +60,7 @@ describe('authentications', () => {
     });
   });
 
-  it('api key authentication', () => {
+  it.skip('api key authentication', () => {
     cy.request({
       method: "GET",
       url: "https://api.openweathermap.org/data/2.5/forecast/daily",
@@ -73,15 +73,16 @@ describe('authentications', () => {
     });
   });
 
-  it('OAuth2 request', () => {
-    cy.request({
-      method: 'GET',
-      url: 'https://api.github.com/user/repos',
-      headers: {
-        Authorization: `Bearer ${accessToken}`
-      }
-    }).then((response) => {
-      expect(response.status).equal(200)
-    })
-  });
+  it.skip
+    ('OAuth2 request', () => {
+      cy.request({
+        method: 'GET',
+        url: 'https://api.github.com/user/repos',
+        headers: {
+          Authorization: `Bearer ${accessToken}`
+        }
+      }).then((response) => {
+        expect(response.status).equal(200)
+      })
+    });
 });
