@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy-report": "gh-pages -d cypress/reports/mochawesome"
+    "deploy-report": "gh-pages -d cypress/reports/mochawesome -u \"github-actions[bot] <github-actions[bot]@users.noreply.github.com>\" -r https://x-access-token:${GH_TOKEN}@github.com/Nkereuwem03/cypress-automation.git"
   },
   "author": "Nkereuwem",
   "license": "ISC",
