@@ -49,16 +49,17 @@ jobs:
           retention-days: 7
             
       - name: Set git user for deployment
+        id: set-git-user
         run: |
-          git config --global user.email "nkereuwem.udoudo1@gmail.com"
-          git config --global user.name "Nkereuwem03"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
 
       - name: Deploy Mochawesome Report to GitHub Pages
         id: deploy-report
         if: success()
-        run: npm run deploy-report
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run deploy-report
 
       - name: Slack notify end
         id: slack-end
