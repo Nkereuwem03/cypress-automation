@@ -6,6 +6,6 @@ describe("OrangeHRM Login Page Title", () => {
 
   it("should not display an incorrect page title", function () {
     cy.visit("https://opensource-demo.orangehrmlive.com/");
-    cy.title().should("equal", "OrangeHRm Live");
+    cy.title().should("not.equal", "OrangeHRm Live");
   });
 });
