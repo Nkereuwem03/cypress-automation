@@ -8,7 +8,7 @@ describe("OrangeHRM Login - Page Object Model", () => {
   });
 
   // General approach (skipped)
-  it.skip("should log in using direct selectors", () => {
+  it("should log in using direct selectors", () => {
     cy.get("input[placeholder='Username']").type("Admin");
     cy.get("input[placeholder='Password']").type("admin123");
     cy.get("button[type='submit']").click();
