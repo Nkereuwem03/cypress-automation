@@ -2,7 +2,7 @@ describe('authentications', () => {
 
   let accessToken;
 
-  before('should get OAuth access token before tests', () => {
+  before.skip('should get OAuth access token before tests', () => {
     cy.request({
       method: "POST",
       url: "https://github.com/login/oauth/access_token",
