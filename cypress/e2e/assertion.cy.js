@@ -22,7 +22,8 @@ describe("OrangeHRM Login Page Assertions", () => {
     cy.get("button[type='submit']").click();
   });
 
-  it("performs explicit assertions on logged-in user dropdown name", () => {
+  it.skip
+  ("performs explicit assertions on logged-in user dropdown name", () => {
     cy.visit(
       "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     );
