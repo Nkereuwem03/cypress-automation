@@ -48,6 +48,11 @@ jobs:
           if-no-files-found: warn
           retention-days: 7
             
+      - name: Set git user for deployment
+        run: |
+          git config --global user.email "nkereuwem.udoudo1@gmail.com"
+          git config --global user.name "Nkereuwem03"
+
       - name: Deploy Mochawesome Report to GitHub Pages
         id: deploy-report
         if: success()
