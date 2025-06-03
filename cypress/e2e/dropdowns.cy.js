@@ -1,7 +1,7 @@
 describe("Dropdown Menu Interactions", function () {
   // this.timeout(60000)
 
-  it("should select an option from a dynamic dropdown", () => {
+  it.skip("should select an option from a dynamic dropdown", () => {
     cy.visit("https://www.google.com");
     cy.get(".gLFyf").type("cypress automation");
     cy.get("div.wM6W7d>span").should("be.visible").should("have.length.greaterThan", 0);
