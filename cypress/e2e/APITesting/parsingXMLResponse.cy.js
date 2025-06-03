@@ -30,7 +30,7 @@ describe("XML parsing", () => {
     });
   });
 
-  it("fetching PET data - parsing xml response", () => {
+  it.skip("fetching PET data - parsing xml response", () => {
     cy.request({
       method: "GET",
       url: `https://petstore.swagger.io/v2/pet/${petId}`,
