@@ -19,7 +19,6 @@ jobs:
           channel: '#workflows'
           status: starting
           message: 'Cypress tests are starting...'
-          author_name: 'Nkereuwem Udoudo'
         if: always()
 
       - name: Checkout code
@@ -63,7 +62,6 @@ jobs:
           channel: '#workflows'
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
-          author_name: 'Nkereuwem Udoudo'
         if: always()
 
       - name: Notify completion and clean up 
