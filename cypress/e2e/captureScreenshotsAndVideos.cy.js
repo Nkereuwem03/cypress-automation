@@ -13,6 +13,6 @@ describe("Screenshot and Video Capture in Cypress", function () {
       "a.wp-block-button__link.wp-element-button",
       "Form Fields"
     ).click();
-    cy.get("h1").should("have.text", "Form Field");
+    cy.get("h1").should("have.text", "Form Fields");
   });
 });
