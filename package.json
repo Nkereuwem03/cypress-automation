@@ -17,6 +17,8 @@
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "dotenv": "^16.5.0",
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }
