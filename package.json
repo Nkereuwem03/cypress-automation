@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy-report": "gh-pages -d cypress/reports/mochawesome -u \"github-actions[bot] <github-actions[bot]@users.noreply.github.com>\" -r https://x-access-token:${GH_TOKEN}@github.com/Nkereuwem03/cypress-automation.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nkereuwem",
   "license": "ISC",
